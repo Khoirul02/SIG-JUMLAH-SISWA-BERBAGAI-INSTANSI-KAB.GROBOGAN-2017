@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <!-- Animate.css -->
+        <link rel="stylesheet" href="../css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="../css/icomoon.css">
+    <!-- Bootstrap  -->
+        <link rel="stylesheet" href="../css/bootstrap.css">
+
+    <!-- Magnific Popup -->
+        <link rel="stylesheet" href="../css/magnific-popup.css">
+
+    <!-- Flexslider  -->
+        <link rel="stylesheet" href="../css/flexslider.css">
+
+    <!-- Owl Carousel -->
+        <link rel="stylesheet" href="../css/owl.carousel.min.css">
+        <link rel="stylesheet" href="../css/owl.theme.default.min.css">
+    
+    <!-- Flaticons  -->
+        <link rel="stylesheet" href="../fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+        <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/modernizr-2.6.2.min.js"></script>
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+    <div class="colorlib-loader"></div>
+
+    <div id="page">
+        <nav class="colorlib-nav" role="navigation">
+            <div class="upper-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <p>Welcome to Information Education</p>
+                        </div>
+                        <div class="col-xs-6 col-md-push-2 text-right">
+                            <p>
+                                <ul class="colorlib-social-icons">
+                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                                </ul>
+                            </p>
+                            <p class="btn-apply"><a href="#">Apply Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="top-menu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div id="colorlib-logo"><a href="index.html">SIG Tingkat Pendidikan</a></div>
+                        </div>
+                        <div class="col-md-8 text-right menu-1">
+                            <ul>
+                                <li class="active"><a href="../index.html">Home</a></li>
+                                <li><a href="../statistik/index.html">Data Statistik</a></li>
+                                <li class="has-dropdown">
+                                    <a href="#">Peta Tematik</a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html">SD</a></li>
+                                        <li><a href="../peta_sig_sltp_2017/index.html">SMP</a></li>
+                                        <li><a href="../peta_sig_slta_2017/index.html">SMA</a></li>
+                                        <li><a href="../peta_sig_pt_2017/index.html">PT/Akademik</a></li>
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="about.html">About</a></li>
+                                <li><a href="event.html">Events</a></li>
+                                <li><a href="news.html">News</a></li> -->
+                                <!-- <li><a href="contact.html">Contact</a></li> -->
+                                <!-- <li class="btn-cta"><a href="#"><span>Free Trial</span></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div id="map">
+        </div>
+        <footer id="colorlib-footer">
+            <div class="container">
+                <div class="row row-pb-md">
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Pendidikan</h4>
+                        <p>Pendidikan adalah pembelajaran pengetahuan, keterampilan, dan kebiasaan sekelompok orang yang diturunkan dari satu generasi ke generasi berikutnya melalui pengajaran, pelatihan, atau penelitian. Pendidikan sering terjadi di bawah bimbingan orang lain, tetapi juga memungkinkan secara otodidak.</p>
+                        <p>
+                            <ul class="colorlib-social-icons">
+                                <li><a href="#"><i class="icon-twitter"></i></a></li>
+                                <li><a href="#"><i class="icon-facebook"></i></a></li>
+                                <li><a href="#"><i class="icon-linkedin"></i></a></li>
+                                <li><a href="#"><i class="icon-dribbble"></i></a></li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Quick Links</h4>
+                        <p>
+                            <ul class="colorlib-footer-links">
+                                <li><a href="#"><i class="icon-check"></i> Home</a></li>
+                            <!--    <li><a href="#"><i class="icon-check"></i> Testimonials</a></li>
+                                <li><a href="#"><i class="icon-check"></i> Courses</a></li>
+                                <li><a href="#"><i class="icon-check"></i> Event</a></li>
+                                <li><a href="#"><i class="icon-check"></i> News</a></li>
+                                <li><a href="#"><i class="icon-check"></i> Contact</a></li> -->
+                            </ul>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Peta Tematik</h4>
+                        <div class="f-blog">
+                            <a href="peta_sig_sd_2017/index.html" class="blog-img" style="background-image: url(../images/blog-3.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h2><a href="index.html">Sekolah Dasar(SD)</a></h2>
+                                <p class="admin"><span>26 Maret 2019</span></p>
+                            </div>
+                        </div>
+                        <div class="f-blog">
+                            <a href="../peta_sig_sltp_2017/index.html" class="blog-img" style="background-image: url(../images/blog-3.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h2><a href="../peta_sig_sltp_2017/index.html">Sekolah Menegah Pertama</a></h2>
+                                <p class="admin"><span>26 Naret 2019</span></p>
+                            </div>
+                        </div>
+                        <div class="f-blog">
+                            <a href="../peta_sig_slta_2017/index.html" class="blog-img" style="background-image: url(../images/blog-3.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h2><a href="../peta_sig_slta_2017/index.html">Sekolah Menegah Akhir</a></h2>
+                                <p class="admin"><span>27 Maret 2019</span></p>
+                            </div>
+                        </div>
+                        <div class="f-blog">
+                            <a href="../peta_sig_pt_2017/index.html" class="blog-img" style="background-image: url(../images/blog-3.jpg);">
+                            </a>
+                            <div class="desc">
+                                <h2><a href="../peta_sig_pt_2017/index.html">PT/Akademik</a></h2>
+                                <p class="admin"><span>27 Maret 2019</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 colorlib-widget">
+                        <h4>Contact Info</h4>
+                        <ul class="colorlib-footer-links">
+                            <li>Plewan 2, <br> Desa Siwalan Kota Semarang</li>
+                            <li><a href="tel://1234567920"><i class="icon-phone"></i> 085713728021</a></li>
+                            <li><a href="mailto:info@yoursite.com"><i class="icon-envelope"></i> hudak006@gmail.com</a></li>
+                            <li><a href="http://luxehotel.com"><i class="icon-location4"></i> educationqgis.com</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copy">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p>
+                                <small class="block">&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Khoirul Huda</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</small><br> 
+                            <!--    <small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>, <a href="http://pexels.com/" target="_blank">Pexels</a></small> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/grobogan_0.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+            highlightLayer.openPopup();
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[-7.58226384187,110.203630162],[-6.82521897696,111.340208595]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
+        var bounds_group = new L.featureGroup([]);
+        var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+            maxZoom: 28
+        });
+        basemap0.addTo(map);
+        function setBounds() {
+        }
+        function pop_grobogan_0(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    if (typeof layer.closePopup == 'function') {
+                        layer.closePopup();
+                    } else {
+                        layer.eachLayer(function(feature){
+                            feature.closePopup()
+                        });
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? Autolinker.link(String(feature.properties['ID'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID_Kec'] !== null ? Autolinker.link(String(feature.properties['ID_Kec'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Kecamatan</strong><br />' + (feature.properties['Kecamatan'] !== null ? Autolinker.link(String(feature.properties['Kecamatan'])) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>siswa_sd</strong><br />' + (feature.properties['siswa_sd'] !== null ? Autolinker.link(String(feature.properties['siswa_sd'])) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_grobogan_0_0(feature) {
+            if (feature.properties['siswa_sd'] >= 11645.000000 && feature.properties['siswa_sd'] <= 19024.750000 ) {
+                return {
+                pane: 'pane_grobogan_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.411765)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(247,251,255,0.411765)',
+            }
+            }
+            if (feature.properties['siswa_sd'] >= 19024.750000 && feature.properties['siswa_sd'] <= 33784.250000 ) {
+                return {
+                pane: 'pane_grobogan_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.411765)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(115,179,216,0.411765)',
+            }
+            }
+            if (feature.properties['siswa_sd'] >= 33784.250000 && feature.properties['siswa_sd'] <= 41164.000000 ) {
+                return {
+                pane: 'pane_grobogan_0',
+                opacity: 1,
+                color: 'rgba(0,0,0,0.411765)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(8,48,107,0.411765)',
+            }
+            }
+        }
+        map.createPane('pane_grobogan_0');
+        map.getPane('pane_grobogan_0').style.zIndex = 400;
+        map.getPane('pane_grobogan_0').style['mix-blend-mode'] = 'normal';
+        var layer_grobogan_0 = new L.geoJson(json_grobogan_0, {
+            attribution: '<a href=""></a>',
+            pane: 'pane_grobogan_0',
+            onEachFeature: pop_grobogan_0,
+            style: style_grobogan_0_0,
+        });
+        bounds_group.addLayer(layer_grobogan_0);
+        map.addLayer(layer_grobogan_0);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'SD 2017<br /><table><tr><td style="text-align: center;"><img src="legend/grobogan_0_116451902475Sedikit0.png" /></td><td> 11645 - 19024.75 Sedikit</td></tr><tr><td style="text-align: center;"><img src="legend/grobogan_0_19024753378425Sedang1.png" /></td><td>19024.75 - 33784.25 Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/grobogan_0_337842541164Banyak2.png" /></td><td> 33784.25 - 41164 Banyak</td></tr></table>': layer_grobogan_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        var i = 0;
+        layer_grobogan_0.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_grobogan_0'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_grobogan_0]);
+        map.on("zoomend", function(){
+            resetLabels([layer_grobogan_0]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_grobogan_0]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_grobogan_0]);
+        });
+        </script>
+    <div class="gototop js-top">
+        <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+    </div>
+    <script src="../js/jquery.min.js"></script>
+    <!-- jQuery Easing -->
+    <script src="../js/jquery.easing.1.3.js"></script>
+    <!-- Bootstrap -->
+    <script src=../js/bootstrap.min.js"></script>
+    <!-- Waypoints -->
+    <script src="../js/jquery.waypoints.min.js"></script>
+    <!-- Stellar Parallax -->
+    <script src="../js/jquery.stellar.min.js"></script>
+    <!-- Flexslider -->
+    <script src="../js/jquery.flexslider-min.js"></script>
+    <!-- Owl carousel -->
+    <script src="../js/owl.carousel.min.js"></script>
+    <!-- Magnific Popup -->
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+    <script src="../js/magnific-popup-options.js"></script>
+    <!-- Counters -->
+    <script src="../js/jquery.countTo.js"></script>
+    <!-- Main -->
+    <script src="../js/main.js"></script>
+    </body>
+</html>
