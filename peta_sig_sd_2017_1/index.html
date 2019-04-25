@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
@@ -8,7 +9,8 @@
         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="css/leaflet.css">
         <link rel="stylesheet" href="css/qgis2web.css">
-        <!-- Animate.css -->
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800" rel="stylesheet">
+    <!-- Animate.css -->
         <link rel="stylesheet" href="../css/animate.css">
     <!-- Icomoon Icon Fonts-->
         <link rel="stylesheet" href="../css/icomoon.css">
@@ -43,6 +45,7 @@
     </head>
     <body>
     <div class="colorlib-loader"></div>
+
     <div id="page">
         <nav class="colorlib-nav" role="navigation">
             <div class="upper-menu">
@@ -190,7 +193,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 </div>
             </div>
         </footer>
-        </div>
+    </div>
         <script src="js/qgis2web_expressions.js"></script>
         <script src="js/leaflet.js"></script>
         <script src="js/leaflet.rotatedMarker.js"></script>
@@ -200,7 +203,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/SD_0.js"></script>
+        <script src="data/grobogan_0.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -209,7 +212,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         }
         var map = L.map('map', {
             zoomControl:true, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.30479269185,110.634374739],[-6.83478583244,111.228463322]]);
+        }).fitBounds([[-7.58226384187,110.203630162],[-6.82521897696,111.340208595]]);
         var hash = new L.Hash(map);
         map.attributionControl.addAttribution('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a>');
         var bounds_group = new L.featureGroup([]);
@@ -220,7 +223,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         basemap0.addTo(map);
         function setBounds() {
         }
-        function pop_SD_0(feature, layer) {
+        function pop_grobogan_0(feature, layer) {
             layer.on({
                 mouseout: function(e) {
                     if (typeof layer.closePopup == 'function') {
@@ -250,86 +253,86 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
 
-        function style_SD_0_0(feature) {
+        function style_grobogan_0_0(feature) {
             if (feature.properties['siswa_sd'] >= 11645.000000 && feature.properties['siswa_sd'] <= 19024.750000 ) {
                 return {
-                pane: 'pane_SD_0',
+                pane: 'pane_grobogan_0',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(0,0,0,0.411765)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(247,251,255,1.0)',
+                fillColor: 'rgba(247,251,255,0.411765)',
             }
             }
             if (feature.properties['siswa_sd'] >= 19024.750000 && feature.properties['siswa_sd'] <= 33784.250000 ) {
                 return {
-                pane: 'pane_SD_0',
+                pane: 'pane_grobogan_0',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(0,0,0,0.411765)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(115,179,216,1.0)',
+                fillColor: 'rgba(115,179,216,0.411765)',
             }
             }
             if (feature.properties['siswa_sd'] >= 33784.250000 && feature.properties['siswa_sd'] <= 41164.000000 ) {
                 return {
-                pane: 'pane_SD_0',
+                pane: 'pane_grobogan_0',
                 opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
+                color: 'rgba(0,0,0,0.411765)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(8,48,107,1.0)',
+                fillColor: 'rgba(8,48,107,0.411765)',
             }
             }
         }
-        map.createPane('pane_SD_0');
-        map.getPane('pane_SD_0').style.zIndex = 400;
-        map.getPane('pane_SD_0').style['mix-blend-mode'] = 'normal';
-        var layer_SD_0 = new L.geoJson(json_SD_0, {
+        map.createPane('pane_grobogan_0');
+        map.getPane('pane_grobogan_0').style.zIndex = 400;
+        map.getPane('pane_grobogan_0').style['mix-blend-mode'] = 'normal';
+        var layer_grobogan_0 = new L.geoJson(json_grobogan_0, {
             attribution: '<a href=""></a>',
-            pane: 'pane_SD_0',
-            onEachFeature: pop_SD_0,
-            style: style_SD_0_0,
+            pane: 'pane_grobogan_0',
+            onEachFeature: pop_grobogan_0,
+            style: style_grobogan_0_0,
         });
-        bounds_group.addLayer(layer_SD_0);
-        map.addLayer(layer_SD_0);
+        bounds_group.addLayer(layer_grobogan_0);
+        map.addLayer(layer_grobogan_0);
         var baseMaps = {};
-        L.control.layers(baseMaps,{'SD<br /><table><tr><td style="text-align: center;"><img src="legend/SD_0_1164519025Sedikit0.png" /></td><td> 11645 - 19025 Sedikit</td></tr><tr><td style="text-align: center;"><img src="legend/SD_0_1902533784Sedang1.png" /></td><td> 19025 - 33784 Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/SD_0_3378441164Banyak2.png" /></td><td> 33784 - 41164 Banyak</td></tr></table>': layer_SD_0,},{collapsed:false}).addTo(map);
+        L.control.layers(baseMaps,{'SD 2017<br /><table><tr><td style="text-align: center;"><img src="legend/grobogan_0_116451902475Sedikit0.png" /></td><td> 11645 - 19024.75 Sedikit</td></tr><tr><td style="text-align: center;"><img src="legend/grobogan_0_19024753378425Sedang1.png" /></td><td>19024.75 - 33784.25 Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/grobogan_0_337842541164Banyak2.png" /></td><td> 33784.25 - 41164 Banyak</td></tr></table>': layer_grobogan_0,},{collapsed:false}).addTo(map);
         setBounds();
         var i = 0;
-        layer_SD_0.eachLayer(function(layer) {
+        layer_grobogan_0.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_SD_0'});
+            layer.bindTooltip((layer.feature.properties['Kecamatan'] !== null?String('<div style="color: #000000; font-size: 8pt; font-family: \'MS Shell Dlg 2\', sans-serif;">' + layer.feature.properties['Kecamatan']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_grobogan_0'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_SD_0]);
+        resetLabels([layer_grobogan_0]);
         map.on("zoomend", function(){
-            resetLabels([layer_SD_0]);
+            resetLabels([layer_grobogan_0]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_SD_0]);
+            resetLabels([layer_grobogan_0]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_SD_0]);
+            resetLabels([layer_grobogan_0]);
         });
         </script>
     <div class="gototop js-top">
